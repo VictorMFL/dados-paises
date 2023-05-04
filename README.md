@@ -1,5 +1,5 @@
 # Afazeres
-<!-- Linguagem para typar *Tem mais.
+Linguagem para typar *Tem mais.
 lenguages: {
   eng?: string;
   spa?: string;
@@ -21,8 +21,8 @@ lenguages: {
   tet?: string;
   ces?: string;
   slk?: string;
-} -->
+}
 
-<!-- Fazer a home -->
+Fazer a home
 
-<!-- Fazer a parte com todos os dados do país -->
+Fazer a parte com todos os dados do país

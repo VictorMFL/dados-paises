@@ -43,7 +43,7 @@ const App = () => {
         <div key={pais.name.common}>
           <img src={pais.flags.png} alt={`Bandeira de ${pais.name.common}`} />
           <h1>{pais.name.common}</h1>
-          <p>Capital:</p>
+          <p className='bg-slate-400'>Capital:</p>
           {pais.capital && capital(pais.capital)}
           <p>Região: {pais.region} </p>
           <p>Continente: {pais.continents && continents(pais.continents)}</p>

@@ -8,9 +8,11 @@ import { CountryProps } from "../interface/interface";
 
 // Url da API
 import { apiUrl } from "../api/Api";
+import Loading from "./Carregamento/Loading";
 
 const Home = () => {
   const [data, setData] = React.useState<CountryProps[]>([]);
+  const [loading, setLoading] = React.useState(true)
 
   async function get() {
     try {
@@ -19,6 +21,8 @@ const Home = () => {
       console.log(response.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -26,6 +30,7 @@ const Home = () => {
     get();
   }, []);
 
+  if(loading) return <Loading />
   if (data.length === 0) return null;
   return (
     <div className="grid grid-cols-3 place-items-center">

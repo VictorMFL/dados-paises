@@ -7,16 +7,14 @@ export type CountryProps = {
   // População
   population: number;
 
+  // Área
+  area: number;
+
   // Capital
   capital: string[];
 
   // Continente
   continents: string[];
-
-  // Moeda 
-  currencies: {
-    name: string;
-  }
 
   // Fronteiras
   borders: string[];
@@ -24,7 +22,7 @@ export type CountryProps = {
   // Região
   region: string;
 
-  // Bandeira 
+  // Bandeira
   flags: {
     png: string;
     svg: string;
@@ -34,14 +32,16 @@ export type CountryProps = {
   coatOfArms: {
     png: string;
     svg: string;
-  }
-
-  independent: boolean;
-  landlocked: boolean;
+  };
 
   // Maps
   maps: {
     googleMaps: string;
     openStreetMaps: string;
-  }
+  };
+
+  // Moeda
+  currencies: {
+    name: string;
+  };
 };

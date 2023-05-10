@@ -49,7 +49,7 @@ const Pais = () => {
   return (
     <div className="bg-slate-400 min-h-screen">
       <header className="bg-black p-8 flex justify-center items-center text-white relative">
-        <Link to="/" className="absolute left-8 cursor-pointer">
+        <Link to="/dados-paises" className="absolute left-8 cursor-pointer">
           <HiOutlineArrowLeft size={32} />
         </Link>
         <p className="text-4xl mb-2">Dados</p>

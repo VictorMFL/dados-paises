@@ -38,7 +38,7 @@ const Header = ({ data }: StateProps) => {
     const firstResult = filteredData[0];
     if (firstResult) {
       window.localStorage.setItem("País", firstResult.name.common);
-      navigate(`/${firstResult.name.common}`);
+      navigate(`${firstResult.name.common}`);
     }
   }
 

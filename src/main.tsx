@@ -12,12 +12,12 @@ import Pais from './components/Pais';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/dados-paises",
     element: <App />,
     errorElement: <ErrorPage />
   },
   {
-    path: "/:id",
+    path: "dados-paises/:id",
     element: <Pais />
   },
 ]);

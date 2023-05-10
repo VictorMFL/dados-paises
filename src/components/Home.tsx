@@ -10,8 +10,12 @@ import { CountryProps } from "../interface/interface";
 import { apiUrl } from "../api/Api";
 import Loading from "./Carregamento/Loading";
 
-const Home = () => {
-  const [data, setData] = React.useState<CountryProps[]>([]);
+type StateProps = {
+  data: CountryProps[];
+  setData: React.Dispatch<React.SetStateAction<CountryProps[]>>;
+};
+
+const Home = ({data, setData}: StateProps) => {
   const [loading, setLoading] = React.useState(true)
 
   async function get() {
@@ -45,6 +49,7 @@ const Home = () => {
             src={pais.flags.png}
             alt={`Bandeira de ${pais.name.common}`}
             className="h-44 w-72 rounded-md"
+            id={String(pais.population)}
           />
           <h3 className="text-2xl">{pais.name.common}</h3>
         </Link>

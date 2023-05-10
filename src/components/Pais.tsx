@@ -7,9 +7,11 @@ import { CountryProps } from "../interface/interface";
 // Icone
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import Loading from "./Carregamento/Loading";
 
 const Pais = () => {
   const [data, setData] = React.useState<CountryProps[]>();
+  const [loading, setLoading] = React.useState(true)
 
   async function get() {
     const paisUrl = window.localStorage.getItem("País");
@@ -18,15 +20,15 @@ const Pais = () => {
         `https://restcountries.com/v3.1/name/${paisUrl}`
       );
       setData(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false)
     }
   }
 
   React.useEffect(() => {
     get();
-    window.localStorage.removeItem("pais");
   }, []);
 
   function capital(capital: string[]) {
@@ -43,7 +45,7 @@ const Pais = () => {
     ));
   }
 
-  if (data?.length === 0) return null;
+  if(loading) return <Loading />
   return (
     <div className="bg-slate-400 min-h-screen">
       <header className="bg-black p-8 flex justify-center items-center text-white relative">

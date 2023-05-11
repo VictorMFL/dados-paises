@@ -43,20 +43,22 @@ const Header = ({ data }: StateProps) => {
   }
 
   return (
-    <header className="bg-black p-8 flex flex-col justify-center items-center relative">
-      <h1 className="text-4xl mb-2">Países</h1>
-      <p>Descubra algumas curiosidades de Países</p>
-      <form className="absolute right-8 text-black" onSubmit={handleSubmit}>
+    <header className="bg-black p-8 flex justify-center items-center relative tablet:justify-between celular:flex-col">
+      <menu className='text-center tablet:text-left celular:text-center celular:mb-6'>
+        <h1 className="text-4xl mb-2 tablet:text-2xl tablet:mb-0">Países</h1>
+        <p className="text-sm">Descubra algumas curiosidades de Países</p>
+      </menu>
+      <form className="absolute right-8 text-black celular:relative celular:w-full celular:flex celular:items-center celular:justify-center celular:left-0" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Pesquisa"
           value={pesquisa}
           onChange={handleChange}
-          className="p-2 outline-none rounded-md"
+          className="p-2 outline-none rounded-md celular:w-full"
         />
         <button
           type="submit"
-          className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer"
+          className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer celular:right-4"
         >
           <GoSearch color="#000000" size={24} />
         </button>

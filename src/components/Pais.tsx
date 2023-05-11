@@ -7,6 +7,8 @@ import { CountryProps } from "../interface/interface";
 // Icone
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
+
+// Tela de carregamento
 import Loading from "./Carregamento/Loading";
 
 const Pais = () => {
@@ -52,14 +54,14 @@ const Pais = () => {
         <Link to="/dados-paises" className="absolute left-8 cursor-pointer">
           <HiOutlineArrowLeft size={32} />
         </Link>
-        <p className="text-4xl mb-2">Dados</p>
+        <p className="text-4xl mb-2 telasP:text-3xl">Dados</p>
       </header>
       {data?.map((pais) => (
         <main key={pais.name.common} className="p-8">
-          <h1 className="text-4xl text-center my-4 font-bold">
+          <h1 className="text-4xl text-center my-4 font-bold tablet:text-3xl">
             {pais.name.common}
           </h1>
-          <section className="grid grid-cols-2 place-items-center max-h-64">
+          <section className="grid grid-cols-2 place-items-center max-h-64 celular:grid-cols-1 celular:max-h-max celular:gap-8">
             <div>
               <p className="text-2xl">Bandeira:</p>
               <img
@@ -77,15 +79,15 @@ const Pais = () => {
             </div>
           </section>
 
-          <section className="grid grid-cols-2 place-items-center mt-8">
+          <section className="grid grid-cols-2 place-items-center mt-8 celular:grid-cols-1 celular:gap-8">
             <div>
-              <h1 className="text-3xl font-bold">Capital:</h1>
-              <h2 className="text-3xl text-center">
+              <h1 className="text-3xl font-bold tablet:text-xl">Capital:</h1>
+              <h2 className="text-3xl text-center tablet:text-xl">
                 {pais.capital && capital(pais.capital)}
               </h2>
             </div>
             <div>
-              <h1 className="text-3xl">Este país faz fronteira com:</h1>
+              <h1 className="text-3xl tablet:text-xl">Este país faz fronteira com:</h1>
               <div className="flex gap-4 flex-wrap items-center justify-center">
                 {pais.borders && borders(pais.borders)}
               </div>
